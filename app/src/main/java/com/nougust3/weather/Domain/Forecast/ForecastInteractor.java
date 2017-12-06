@@ -20,4 +20,13 @@ public class ForecastInteractor {
         return weatherRepository.getForecast(cityName);
     }
 
+    /**
+     * Temperature equivalent perceived by humans
+     * form http://www.bom.gov.au/info/thermal_stress/
+     */
+    public double getApparentTemperature(double temperature, int humidity, double windSpeed) {
+        double pressure = humidity / 100 * 6.105 * Math.exp(17.27 * temperature / (237.7 / temperature));
+        return temperature + 0.33 * pressure + 0.7 * windSpeed - 4;
+    }
+
 }

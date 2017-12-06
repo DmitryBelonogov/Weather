@@ -120,7 +120,7 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
     }
 
     @Override
-    public void setHeatIndex(Double temp) {
+    public void setApparentTemp(Double temp) {
         heatIndexView.setText(temp + "°");
     }
 

@@ -11,7 +11,7 @@ public interface HomeView extends MvpView {
 
     void setDescription(String description);
 
-    void setHeatIndex(Double temp);
+    void setApparentTemp(Double temp);
 
     void setHumidity(Integer humidity);
 

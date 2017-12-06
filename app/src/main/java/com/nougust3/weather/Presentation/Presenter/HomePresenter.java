@@ -34,9 +34,13 @@ public class HomePresenter extends MvpPresenter<HomeView> {
     }
 
     private void onForecastLoadSuccess(Forecast forecast) {
+        double apparentTemp = forecastInteractor.getApparentTemperature(forecast.getMain().getTemp(),
+                forecast.getMain().getHumidity(),
+                forecast.getWind().getSpeed());
+
         getViewState().showForecast(forecast.getMain().getTemp());
         getViewState().setCityName(forecast.getName());
-        getViewState().setHeatIndex(forecast.getMain().getTemp());
+        getViewState().setApparentTemp(apparentTemp);
         getViewState().setHumidity(forecast.getMain().getHumidity());
         getViewState().setWind(forecast.getWind().getSpeed());
         getViewState().setPressure(forecast.getMain().getPressure());
