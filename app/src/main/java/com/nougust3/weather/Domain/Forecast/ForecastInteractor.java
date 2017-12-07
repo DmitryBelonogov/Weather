@@ -26,7 +26,7 @@ public class ForecastInteractor {
      */
     public double getApparentTemperature(double temperature, int humidity, double windSpeed) {
         double pressure = humidity / 100 * 6.105 * Math.exp(17.27 * temperature / (237.7 / temperature));
-        return temperature + 0.33 * pressure + 0.7 * windSpeed - 4;
+        return Math.round((temperature + 0.33 * pressure + 0.7 * windSpeed - 4) * 100.0) / 100.0;
     }
 
 }
