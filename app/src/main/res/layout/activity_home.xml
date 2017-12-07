@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
+            android:textColor="@color/colorLight"
             android:layout_below="@id/icon_view" />
 
         <TextView
@@ -42,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:textColor="@color/colorLight"
             android:layout_below="@id/city_view" />
 
         <TextView
@@ -55,6 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:textColor="@color/colorLight"
             android:layout_below="@id/country_view" />
 
         <TextView
@@ -65,6 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:textColor="@color/colorLight"
             android:layout_alignTop="@id/icon_view" />
 
     </RelativeLayout>
@@ -94,13 +98,15 @@
                 <TextView
                     android:id="@+id/heat_index_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Feels like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp"/>
 
             </LinearLayout>
@@ -115,13 +121,15 @@
                 <TextView
                     android:id="@+id/humidity_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -144,13 +152,15 @@
                 <TextView
                     android:id="@+id/wind_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -164,13 +174,15 @@
                 <TextView
                     android:id="@+id/pressure_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -193,13 +205,15 @@
                 <TextView
                     android:id="@+id/visibility_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Visibility"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -213,13 +227,15 @@
                 <TextView
                     android:id="@+id/sunset_view"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLight" />
 
                 <TextView
                     android:text="Sunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
+                    android:textColor="@color/colorLight"
                     android:textSize="12sp"/>
 
             </LinearLayout>
