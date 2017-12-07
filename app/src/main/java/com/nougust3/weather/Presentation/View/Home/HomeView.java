@@ -3,6 +3,10 @@ package com.nougust3.weather.Presentation.View.Home;
 import com.arellomobile.mvp.MvpView;
 
 public interface HomeView extends MvpView {
+    void showProgress();
+
+    void hideProgress();
+
     void showForecast(Double temp);
 
     void setCityName(String name);

@@ -25,6 +25,8 @@ public class HomePresenter extends MvpPresenter<HomeView> {
         this.rxSchedulersProvider = rxSchedulersProvider;
         this.forecastInteractor = forecastInteractor;
         this.cityName = cityName;
+
+        getViewState().showProgress();
     }
 
     public void onGetForecast() {
@@ -48,11 +50,13 @@ public class HomePresenter extends MvpPresenter<HomeView> {
         getViewState().setSunset(new SimpleDateFormat("HH:MM").format(forecast.getSys().getSunset()));
         getViewState().setDescription(forecast.getWeather().get(0).getDescription());
         getViewState().setCountryName((new Locale("", forecast.getSys().getCountry())).getDisplayCountry());
+
+        getViewState().hideProgress();
     }
 
     private void onForecastLoadError(Throwable throwable) {
         if(throwable instanceof NoNetworkException) {
-            //getViewState().hideLoadingProgress();
+            getViewState().hideProgress();
             //getViewState().showNoNetworkLayout();
         }
     }

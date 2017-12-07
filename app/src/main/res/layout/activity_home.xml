@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".Presentation.View.Home.HomeActivity">
+    tools:context=".Presentation.View.Home.HomeActivity"
+    android:animateLayoutChanges="true">
+
+    <ProgressBar
+        android:id="@+id/progress_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/colorLight"
+        android:visibility="visible" />
 
     <RelativeLayout
         android:id="@+id/summary_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:visibility="gone" >
 
         <ImageView
             android:id="@+id/icon_view"
@@ -74,13 +87,15 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:id="@+id/details_view"
         android:layout_below="@id/summary_view"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
-        android:weightSum="3">
+        android:weightSum="3"
+        android:visibility="gone" >
 
         <LinearLayout
             android:layout_width="wrap_content"

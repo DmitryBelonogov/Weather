@@ -4,7 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
@@ -19,6 +23,10 @@ import com.nougust3.weather.R;
 import com.nougust3.weather.WeatherApplication;
 
 public class HomeActivity extends MvpAppCompatActivity implements HomeView {
+
+    private ProgressBar progressBar;
+    private RelativeLayout summaryView;
+    private LinearLayout detailsView;
 
     private ImageView weatherIcon;
 
@@ -80,6 +88,10 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
             getSupportActionBar().setElevation(0);
         }
 
+        progressBar = findViewById(R.id.progress_view);
+        summaryView = findViewById(R.id.summary_view);
+        detailsView = findViewById(R.id.details_view);
+
         weatherIcon = findViewById(R.id.icon_view);
 
         cityView = findViewById(R.id.city_view);
@@ -93,6 +105,20 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
         visibilityView = findViewById(R.id.visibility_view);
         sunsetView = findViewById(R.id.sunset_view);
 
+    }
+
+    @Override
+    public void showProgress() {
+        summaryView.setVisibility(View.GONE);
+        detailsView.setVisibility(View.GONE);
+        progressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideProgress() {
+        progressBar.setVisibility(View.GONE);
+        summaryView.setVisibility(View.VISIBLE);
+        detailsView.setVisibility(View.VISIBLE);
     }
 
     private void populate() {
