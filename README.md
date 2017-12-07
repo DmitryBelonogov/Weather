@@ -1,6 +1,4 @@
 # Weather
-Weather App built using RxJava2, Retrofit2, Dagger2 and Clean Architecture. 
-# Melophile
 
 Simple music app which uses [OpenWeatherMap API](https://openweathermap.org/api).
 It allows you get weather forecast for selected city. 
