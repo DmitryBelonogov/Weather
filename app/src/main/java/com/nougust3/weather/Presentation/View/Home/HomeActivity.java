@@ -22,6 +22,8 @@ import com.nougust3.weather.Presentation.View.Start.StartActivity;
 import com.nougust3.weather.R;
 import com.nougust3.weather.WeatherApplication;
 
+import java.util.Locale;
+
 public class HomeActivity extends MvpAppCompatActivity implements HomeView {
 
     private ProgressBar progressBar;
@@ -127,7 +129,7 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
 
     @Override
     public void showForecast(Double temp) {
-        temperatureView.setText(temp + "°");
+        temperatureView.setText(String.format(Locale.ENGLISH, "%s°", temp));
     }
 
     @Override
@@ -142,32 +144,33 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
 
     @Override
     public void setDescription(String description) {
-        descriptionView.setText(description.substring(0, 1).toUpperCase() + description.substring(1, description.length()));
+        description = description.substring(0, 1).toUpperCase() + description.substring(1, description.length());
+        descriptionView.setText(description);
     }
 
     @Override
     public void setApparentTemp(Double temp) {
-        heatIndexView.setText(temp + "°");
+        heatIndexView.setText(String.format(Locale.ENGLISH, "%s°", temp));
     }
 
     @Override
     public void setHumidity(Integer humidity) {
-        humidityView.setText(humidity + "%");
+        humidityView.setText(String.format(Locale.ENGLISH, "%s%%", humidity));
     }
 
     @Override
     public void setWind(Double speed) {
-        windView.setText(speed + "KPH");
+        windView.setText(String.format(Locale.ENGLISH, getString(R.string.wind_value), speed.intValue()));
     }
 
     @Override
     public void setPressure(Integer pressure) {
-        pressureView.setText(pressure + "HPA");
+        pressureView.setText(String.format(Locale.ENGLISH, getString(R.string.pressure_value), pressure));
     }
 
     @Override
     public void setVisibility(int i) {
-        visibilityView.setText(i + "KM");
+        visibilityView.setText(String.format(Locale.ENGLISH, getString(R.string.visibility_value), i));
     }
 
     @Override

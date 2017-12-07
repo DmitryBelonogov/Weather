@@ -31,30 +31,25 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/weather_icon"
             android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true" />
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:id="@+id/city_view"
             android:textSize="28sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
             android:textColor="@color/colorLight"
             android:layout_below="@id/icon_view" />
 
         <TextView
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:textSize="16sp"
             android:id="@+id/country_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="@color/colorLight"
             android:layout_below="@id/city_view" />
@@ -62,13 +57,11 @@
         <TextView
             android:textSize="16sp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="32dp"
             android:id="@+id/description_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:textColor="@color/colorLight"
             android:layout_below="@id/country_view" />
@@ -80,9 +73,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:textColor="@color/colorLight"
-            android:layout_alignTop="@id/icon_view" />
+            android:layout_alignTop="@id/icon_view"
+            tools:ignore="RelativeOverlap" />
 
     </RelativeLayout>
 
@@ -95,7 +88,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:weightSum="3"
-        android:visibility="gone" >
+        android:visibility="gone"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -117,7 +111,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Feels like"
+                    android:text="@string/feels_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
@@ -128,10 +122,11 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:orientation="vertical"
                 android:layout_weight="1"
-                android:gravity="center_horizontal">
+                android:gravity="center_horizontal"
+                tools:ignore="NestedWeights">
 
                 <TextView
                     android:id="@+id/humidity_view"
@@ -140,7 +135,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Humidity"
+                    android:text="@string/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
@@ -171,7 +166,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Wind"
+                    android:text="@string/wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
@@ -193,7 +188,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Pressure"
+                    android:text="@string/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
@@ -224,7 +219,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Visibility"
+                    android:text="@string/visibility"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
@@ -246,7 +241,7 @@
                     android:textColor="@color/colorLight" />
 
                 <TextView
-                    android:text="Sunset"
+                    android:text="@string/sunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
