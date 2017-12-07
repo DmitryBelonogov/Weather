@@ -3,10 +3,13 @@
 Simple music app which uses [OpenWeatherMap API](https://openweathermap.org/api).
 It allows you get weather forecast for selected city. 
 
+
 # What can I do with it? #
 - Select city
 - Get current weather inforamtion
 - List of selected locations
+
+
 
 ```
 The MIT License
