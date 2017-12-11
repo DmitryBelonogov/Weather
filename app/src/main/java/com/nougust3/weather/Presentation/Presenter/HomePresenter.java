@@ -47,7 +47,7 @@ public class HomePresenter extends MvpPresenter<HomeView> {
         getViewState().setWind(forecast.getWind().getSpeed());
         getViewState().setPressure(forecast.getMain().getPressure());
         getViewState().setVisibility(10);
-        getViewState().setSunset(new SimpleDateFormat("HH:MM").format(forecast.getSys().getSunset()));
+        getViewState().setSunset(new SimpleDateFormat("HH:MM", Locale.ENGLISH).format(forecast.getSys().getSunset()));
         getViewState().setDescription(forecast.getWeather().get(0).getDescription());
         getViewState().setCountryName((new Locale("", forecast.getSys().getCountry())).getDisplayCountry());
 

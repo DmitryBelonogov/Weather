@@ -92,7 +92,7 @@ public class StartActivity extends MvpAppCompatActivity implements StartView {
             cities.set(i, cities.get(i).substring(1, cities.get(i).length()));
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, cities);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.history_item, cities);
         citiesList.setAdapter(adapter);
         citiesList.setOnItemClickListener((parent, view, position, id) -> loadForecast(adapter.getItem(position)));
     }
