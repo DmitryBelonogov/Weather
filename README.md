@@ -1,6 +1,6 @@
 # Weather
 
-Simple music app which uses [OpenWeatherMap API](https://openweathermap.org/api).
+Simple weather app which uses [OpenWeatherMap API](https://openweathermap.org/api).
 It allows you get weather forecast for selected city. 
 
 
