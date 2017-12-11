@@ -34,7 +34,7 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginStart="16dp"
             android:id="@+id/city_view"
             android:textSize="28sp"
@@ -51,7 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:textColor="@color/colorLight"
+            android:textColor="@color/colorGray"
+            android:fontFamily="sans-serif-light"
             android:layout_below="@id/city_view" />
 
         <TextView
@@ -87,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
         android:weightSum="3"
         android:visibility="gone"
         android:baselineAligned="false">
@@ -115,7 +117,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp"/>
 
             </LinearLayout>
@@ -139,7 +142,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -170,7 +174,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -192,7 +197,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -223,7 +229,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp" />
 
             </LinearLayout>
@@ -245,7 +252,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:textColor="@color/colorLight"
+                    android:textColor="@color/colorGray"
+                    android:fontFamily="sans-serif-light"
                     android:textSize="12sp"/>
 
             </LinearLayout>
