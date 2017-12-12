@@ -5,8 +5,9 @@ It allows you get weather forecast for selected city.
 
 
 # What can I do with it? #
-- Select city
+- Select city by name
 - Get current weather inforamtion
+- Get 5 day / 3 hour forecast
 - List of selected locations
 
 
