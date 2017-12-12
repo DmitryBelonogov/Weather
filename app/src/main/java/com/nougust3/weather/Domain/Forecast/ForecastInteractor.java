@@ -1,6 +1,7 @@
 package com.nougust3.weather.Domain.Forecast;
 
 import com.nougust3.weather.Models.Forecast;
+import com.nougust3.weather.Models.ForecastWeek;
 import com.nougust3.weather.Repository.WeatherRepository;
 
 import javax.inject.Inject;
@@ -18,6 +19,10 @@ public class ForecastInteractor {
 
     public Single<Forecast> getForecast(String cityName) {
         return weatherRepository.getForecast(cityName);
+    }
+
+    public Single<ForecastWeek> getWeekForecast(String cityName) {
+        return weatherRepository.getWeekForecast(cityName);
     }
 
     /**

@@ -7,9 +7,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -17,12 +20,17 @@ import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.nougust3.weather.DI.DaggerHomePresenterComponent;
 import com.nougust3.weather.DI.HomePresenterComponent;
 import com.nougust3.weather.DI.Modules.HomePresenterModule;
+import com.nougust3.weather.Models.ForecastList;
+import com.nougust3.weather.Models.View.ForecastItem;
 import com.nougust3.weather.Presentation.Presenter.HomePresenter;
 import com.nougust3.weather.Presentation.View.Start.StartActivity;
 import com.nougust3.weather.R;
 import com.nougust3.weather.WeatherApplication;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class HomeActivity extends MvpAppCompatActivity implements HomeView {
 
@@ -42,6 +50,8 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
     private TextView pressureView;
     private TextView visibilityView;
     private TextView sunsetView;
+
+    private LinearLayout weekForecast;
 
     @InjectPresenter
     HomePresenter homePresenter;
@@ -107,6 +117,7 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
         visibilityView = findViewById(R.id.visibility_view);
         sunsetView = findViewById(R.id.sunset_view);
 
+        weekForecast = findViewById(R.id.week_forecast);
     }
 
     @Override
@@ -185,5 +196,23 @@ public class HomeActivity extends MvpAppCompatActivity implements HomeView {
         intent.putExtra("reset", true);
 
         startActivity(intent);
+    }
+
+    @Override
+    public void setWeekForecast(ArrayList<ForecastItem> forecastItems) {
+        for(ForecastItem forecast: forecastItems) {
+            View forecastView = View.inflate(this, R.layout.forecast_item, null);
+
+            ((TextView) forecastView.findViewById(R.id.date)).setText(forecast.date);
+            ((TextView) forecastView.findViewById(R.id.description)).setText(forecast.weather);
+            ((TextView) forecastView.findViewById(R.id.temp)).setText(forecast.temp);
+
+            weekForecast.addView(forecastView);
+        }
+    }
+
+    @Override
+    public void showNoNetworkLayout() {
+        Toast.makeText(this, "Network error", Toast.LENGTH_SHORT).show();
     }
 }

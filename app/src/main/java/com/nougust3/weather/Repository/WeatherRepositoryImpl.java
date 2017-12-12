@@ -3,6 +3,7 @@ package com.nougust3.weather.Repository;
 import com.nougust3.weather.Constants;
 import com.nougust3.weather.Data.WeatherApiService;
 import com.nougust3.weather.Models.Forecast;
+import com.nougust3.weather.Models.ForecastWeek;
 
 import javax.inject.Inject;
 
@@ -20,6 +21,11 @@ public class WeatherRepositoryImpl implements WeatherRepository {
     @Override
     public Single<Forecast> getForecast(String cityName) {
         return weatherApiService.getCurrentWeather(cityName, Constants.APP_ID, "metric", "ru");
+    }
+
+    @Override
+    public Single<ForecastWeek> getWeekForecast(String cityName) {
+        return weatherApiService.getWeekWeather(cityName, Constants.APP_ID, "metric", "ru");
     }
 
 }

@@ -15,11 +15,10 @@ public interface WeatherApiService {
                                        @Query("units") String units,
                                        @Query("lang") String lang);
 
-    @GET("data/2.5/forecast/daily?")
+    @GET("data/2.5/forecast?")
     Single<ForecastWeek> getWeekWeather(@Query("q") String cityName,
                                         @Query("appid") String appId,
                                         @Query("units") String units,
-                                        @Query("lang") String lang,
-                                        @Query("cnt") int daysCount);
+                                        @Query("lang") String lang);
 
 }

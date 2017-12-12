@@ -5,10 +5,13 @@ import com.arellomobile.mvp.MvpPresenter;
 import com.nougust3.weather.Data.Source.Remote.Exceptions.NoNetworkException;
 import com.nougust3.weather.Domain.Forecast.ForecastInteractor;
 import com.nougust3.weather.Models.Forecast;
+import com.nougust3.weather.Models.ForecastWeek;
+import com.nougust3.weather.Models.View.ForecastItem;
 import com.nougust3.weather.Presentation.Common.Rx.RxSchedulersProvider;
 import com.nougust3.weather.Presentation.View.Home.HomeView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -31,8 +34,28 @@ public class HomePresenter extends MvpPresenter<HomeView> {
 
     public void onGetForecast() {
         forecastInteractor.getForecast(cityName)
-            .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
-            .subscribe(this::onForecastLoadSuccess, this::onForecastLoadError);
+                .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
+                .subscribe(this::onForecastLoadSuccess, this::onForecastLoadError);
+
+        forecastInteractor.getWeekForecast(cityName)
+                .compose(rxSchedulersProvider.getIoToMainTransformerSingle())
+                .subscribe(this::onWeekForecastLoadSuccess, this::onForecastLoadError);
+    }
+
+    private void onWeekForecastLoadSuccess(ForecastWeek forecast) {
+        if(forecast.getForecastList() == null) {
+            return;
+        }
+
+        ArrayList<ForecastItem> forecastItems = new ArrayList<>();
+
+        for(int i = 0; i < forecast.getForecastList().size(); i++) {
+            ForecastItem item = new ForecastItem(forecast.getForecastList().get(i));
+            forecastItems.add(item);
+        }
+
+        getViewState().setWeekForecast(forecastItems);
+        getViewState().hideProgress();
     }
 
     private void onForecastLoadSuccess(Forecast forecast) {
@@ -57,7 +80,7 @@ public class HomePresenter extends MvpPresenter<HomeView> {
     private void onForecastLoadError(Throwable throwable) {
         if(throwable instanceof NoNetworkException) {
             getViewState().hideProgress();
-            //getViewState().showNoNetworkLayout();
+            getViewState().showNoNetworkLayout();
         }
     }
 

@@ -4,11 +4,10 @@ package com.nougust3.weather.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class ForecastWeek {
 
-    @SerializedName("city")
-    @Expose
-    private City city;
     @SerializedName("cod")
     @Expose
     private String cod;
@@ -20,15 +19,10 @@ public class ForecastWeek {
     private Integer cnt;
     @SerializedName("list")
     @Expose
-    private java.util.List<com.nougust3.weather.Models.List> list = null;
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
+    private List<ForecastList> forecastList = null;
+    @SerializedName("city")
+    @Expose
+    private City city;
 
     public String getCod() {
         return cod;
@@ -54,12 +48,20 @@ public class ForecastWeek {
         this.cnt = cnt;
     }
 
-    public java.util.List<com.nougust3.weather.Models.List> getList() {
-        return list;
+    public java.util.List<ForecastList> getForecastList() {
+        return forecastList;
     }
 
-    public void setList(java.util.List<com.nougust3.weather.Models.List> list) {
-        this.list = list;
+    public void setForecastList(List<ForecastList> forecastList) {
+        this.forecastList = forecastList;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
 }

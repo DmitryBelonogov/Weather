@@ -1,6 +1,9 @@
 package com.nougust3.weather.Presentation.View.Home;
 
 import com.arellomobile.mvp.MvpView;
+import com.nougust3.weather.Models.View.ForecastItem;
+
+import java.util.ArrayList;
 
 public interface HomeView extends MvpView {
     void showProgress();
@@ -28,4 +31,8 @@ public interface HomeView extends MvpView {
     void setSunset(String sunset);
 
     void showLocationActivity();
+
+    void setWeekForecast(ArrayList<ForecastItem> forecastItems);
+
+    void showNoNetworkLayout();
 }
